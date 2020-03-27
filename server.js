@@ -27,14 +27,16 @@ app.use((req,res,next) => {
 app.get('/', (req,res) => {
   res.render('index')
 })
-app.get('/students', (req,res) => {
+  app.get('/students', (req,res) => {
     res.render('students', {students})
   })
+ 
+
 app.get('/about', (req,res) => {
-    res.sendFile(__dirname + '/views/about.html')
+    res.render('about')
   })
   app.get('/contact', (req,res) => {
-    res.sendFile(__dirname + '/views/contact.html')
+    res.render('contact')
   })
   app.get('/text', (req,res) => {
     res.sendFile(__dirname + '/views/text.txt')
@@ -100,3 +102,8 @@ app.get('/about', (req,res) => {
 app.listen(PORT, () => {
     console.log(`The server is running in port ${PORT}`)
 })
+
+
+
+
+
